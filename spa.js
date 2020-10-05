@@ -1,5 +1,16 @@
 function showPage(page){
+    document.querySelectorAll("section").forEach(section => section.style.display = "none") // Hide all, with a forEach
     document.querySelector(`#${page}`).style.display = "block";
 }
 
-// If i go now in the browser console and do showPage("page1"), it will trigger :O
+document.addEventListener("DOMContentLoaded", function(){
+    document.querySelectorAll("button").forEach(button => 
+        button.onclick = function() { 
+            showPage(this.dataset.page)
+        }
+    );
+});
+
+/*  .forEach()
+    onmouseenter() , onclick() ...  
+ */
